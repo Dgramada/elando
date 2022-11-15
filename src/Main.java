@@ -3,7 +3,25 @@ import java.util.*;
 public class Main {
 
     public static void main(String[] args) {
+        //Problem 1 example
+        int[] nums = new int[]{3,0,3,4,5,9,1};
+        System.out.println(indexOfSumBalance(nums));
 
+        System.out.println();
+
+        //Problem 2 example
+        String dummyString = "\"Lorem ipsum dolor sit amet\"";
+        int tp = 10;
+        printAllCommonSymbols(dummyString, tp);
+
+        System.out.println();
+
+        //Problem 3 example
+        String mainString = "cbabadebbabbcebabaabbcebabbc";
+        String substring = "abbc";
+        List<Integer> permutationLocationList = getPermutationsIndex(mainString, substring);
+        System.out.println("Permutation locations: " + permutationLocationList);
+        System.out.println("Number of permutations: " + permutationLocationList.size());
     }
 
     //////////////////////////////////////////////////////////////////////////////////////////////////
@@ -41,6 +59,11 @@ public class Main {
 
     ////////////////////////////////////////////////////////////////////////////////////////////////
 
+    /**
+     *
+     * @param input
+     * @param tp
+     */
     public static void printAllCommonSymbols(String input, int tp) {
         Map<Character, Integer> charCountsMap = charCounterMap(input);
         Map<Character, Integer> trimmedMap = trimMap(charCountsMap, (float) tp, input.length());
